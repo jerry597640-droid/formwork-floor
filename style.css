@@ -8,3 +8,11 @@
 /* Compact exports: inline equation chains where they occupy a full row. */
 #report .calc-step:not(.calc-columns)>.calc-line .formula,#report .calc-step:not(.calc-columns)>.calc-line .substitution,#report .calc-step:not(.calc-columns)>.calc-line .calculated{display:inline}#report .calc-step:not(.calc-columns)>.calc-line .formula::after,#report .calc-step:not(.calc-columns)>.calc-line .substitution::after{content:' '}#report .span-calculation>.calc-line>div{display:inline}#report .span-calculation>.calc-line>div::after{content:' '}
 @media print{#report .book-group{break-before:auto;border-top:1px solid #888;margin-top:8px;padding-top:8px}#report .book-group-label{break-after:avoid}#report .book-cover{padding-bottom:5px}}
+
+/* Independent close controls at the upper-right of each calculation group. */
+.group-chip-wrap{position:relative;max-width:100%;display:flex}
+.group-chip-wrap .group-chip{padding-right:44px;min-height:48px;width:100%}
+.group-close{position:absolute;top:3px;right:3px;width:28px;height:28px;min-width:28px;padding:0;display:flex;align-items:center;justify-content:center;border:0;border-radius:5px;background:transparent;color:#66808b;font-size:22px;line-height:1}
+.group-close:hover:not(:disabled){background:#fbe9e2;color:#a73c26}
+.group-close:disabled{opacity:.3}
+@media(pointer:coarse){.group-chip-wrap .group-chip{padding-right:52px;min-height:52px}.group-close{width:44px;height:44px;top:4px;right:4px}}
